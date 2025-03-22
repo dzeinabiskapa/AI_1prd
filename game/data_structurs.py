@@ -39,16 +39,16 @@ class GameTreeNode:
                 self.children.append(split_node)
                 split_node.generate_children(max_depth)
 
-    def print_tree(self, depth=0):
-        """Prints the game tree recursively for debugging."""
-        print(" " * depth * 4, f"Player {self.player_turn + 1}, Scores: {self.scores}, Sequence: {self.sequence}")
-        for child in self.children:
-            child.print_tree(depth + 1)
+    #def print_tree(self, depth=0):
+    #    """Prints the game tree recursively for debugging."""
+    #    print(" " * depth * 4, f"Player {self.player_turn + 1}, Scores: {self.scores}, Sequence: {self.sequence}")
+    #    for child in self.children:
+    #        child.print_tree(depth + 1)
 
 def generate_full_game_tree(initial_sequence, max_depth=3):
     """Creates the full game tree up to a limited depth and prints it."""
     print(f"Initial Sequence: {initial_sequence}")  # Print the starting sequence
     root = GameTreeNode(initial_sequence, [0, 0], 0, depth=0)  # Start with Player 1
     root.generate_children(max_depth=max_depth)  # Generate full tree up to max_depth
-    root.print_tree()  # Print the tree
+    #root.print_tree()  # Print the tree
     
